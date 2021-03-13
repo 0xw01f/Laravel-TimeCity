@@ -13,7 +13,13 @@
         {{ config('project.slogan') }}
 
       <footer>
-          <p>&copy; Copyright {{ date('Y') }} &middot; <a href="{{ route('app_about')}}">About</a></p>
+        <p>
+            &copy; Copyright {{ date('Y') }}
+            @if (!Route::is('about'))
+            &middot; <a href="{{ route('about')}}">About</a>
+            @endif
+           
+        </p>
       </footer>
     </body>
 </html>
